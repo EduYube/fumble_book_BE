@@ -37,7 +37,7 @@ I will try to follow de SOLID and Clean Code/Architecture rules in this project.
 - data -> here i define the models 
 - db/schemas -> In this level, I locate the Mongo schemas for my data-types and the connection between Mongo and my project
 - middleware -> Custom middlewares to check a correct login, f.e.
-- routes/router -> here I put API url and methods to my ddbb
+- routes -> here I put API url and methods to my ddbb
 - utils -> as its name says, utils folder.
 - validator -> Where we place all the validators for the app inputs
 
@@ -48,4 +48,4 @@ As a good practice, I define *.env* file where I put the different static variab
 ## First steps
 
 1. Configure *.env*, *index.ts* and a file named *connection.ts* located in **db** where I set the URI, PORT, parser and init the API
-2. Define de first API url  and the MainRouter in **routes/router**
+2. Define de first API router and controller in **routes** and **controller**. At the same time, I define the user schema (as Mongo needs)
