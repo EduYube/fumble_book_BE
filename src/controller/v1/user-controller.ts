@@ -26,6 +26,7 @@ const createUser = async (req: Request, res: Response): Promise<void> => {
 };
 
 const login = async (req: Request, res: Response): Promise<void> => {
+  console.log(req.body);
   const { email, password } = req.body;
 
   try {

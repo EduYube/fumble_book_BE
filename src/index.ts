@@ -27,5 +27,6 @@ connect().then((connected: boolean) => {
 });
 
 app.use((req: Request, res: Response) => {
+  console.log(res);
   res.status(400).send(res);
 });
