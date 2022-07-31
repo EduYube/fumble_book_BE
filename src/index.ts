@@ -3,8 +3,8 @@
 import dotenv from 'dotenv';
 import express, { Application, Request, Response } from 'express';
 import bodyParser from 'body-parser';
-import apiV2 from './routes/v1';
-import { connect } from './db/connection';
+import apiV1 from './routes/v1';
+import connect from './db/connection';
 
 dotenv.config({ path: __dirname + '\\.env' });
 
@@ -14,7 +14,7 @@ const app: Application = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-apiV2(app);
+apiV1(app);
 
 connect().then((connected: boolean) => {
   if (connected) {
@@ -27,5 +27,5 @@ connect().then((connected: boolean) => {
 });
 
 app.use((req: Request, res: Response) => {
-  res.status(400).send('Not found');
+  res.status(400).send(res);
 });
