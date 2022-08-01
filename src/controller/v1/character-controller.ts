@@ -54,6 +54,7 @@ const editCharacter = async (req: Request, res: Response): Promise<void> => {
       data.race = race || data.race;
       data.charclass = charclass || data.charclass;
       data.level = level || data.level;
+      await editedCharacter.save();
       res.send(editedCharacter);
     } else {
       errorMessage(res, 'Something went wrong, try again in a few minutes');
