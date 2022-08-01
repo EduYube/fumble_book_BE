@@ -5,6 +5,7 @@ const connect = async (): Promise<boolean> => {
   try {
     const uri = process.env.MONGO_URI as string;
     await mongoose.connect(uri);
+    console.log('connected to ' + uri);
     return true;
   } catch (e: any) {
     console.log(e.message);
