@@ -8,7 +8,7 @@ import connect from './db/connection';
 
 dotenv.config({ path: __dirname + '\\.env' });
 
-const PORT: string = process.env.PORT!;
+const PORT: string = process.env.PORT! || 2830;
 const app: Application = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
